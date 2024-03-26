@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="8dp"
+    xmlns:tools="http://schemas.android.com/tools"
+
+
+    >
+
+    <LinearLayout
+        android:paddingVertical="16dp"
+        android:paddingHorizontal="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/ivCardNews"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/bbc"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:id="@+id/tvNewsTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            tools:text="小林製薬の株価、ストップ安気配 「紅麹」自主回収 - 日本経済新聞"
+            android:textSize="20dp"
+            />
+
+        <TextView
+            android:id="@+id/tvNewsDescription"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/black"
+            tools:text="（9時30分、プライム、コード4967）小林製薬が売り気配。気配値を制限値幅の下限（ストップ安水準）にあたる前週末比1000円（16.51%）安の5056円まで切り下げている。24日、健康被害の恐れがあるとして自主回収を決めた機能性表示食品に含まれる「紅麹（こうじ）」原料について、飲料や食品メーカーなど52社に供給していたと明らかにした。紅麹原料を使った製品を回収する動きも広がりつつある。自主回"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+
+                android:id="@+id/tvNewsURL"
+                android:layout_marginTop="8dp"
+                android:textColor="#3F51B5"
+                tools:text="Detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>
