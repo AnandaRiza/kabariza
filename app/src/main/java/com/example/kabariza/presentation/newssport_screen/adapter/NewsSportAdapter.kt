@@ -11,9 +11,10 @@ import com.bumptech.glide.Glide
 import com.example.kabariza.R
 import com.example.kabariza.databinding.FragmentSportBinding
 import com.example.kabariza.databinding.ItemNewsListBinding
+import com.example.kabariza.utils.NewsItemClickListener
 
 
-class NewsSportAdapter(private val sportdata: List<Article>, private val context: Context) :
+class NewsSportAdapter(private val sportdata: List<Article>, private val context: Context, private val newsItemClickListener: NewsItemClickListener) :
     RecyclerView.Adapter<NewsSportAdapter.sportViewHolder>() {
 
     inner class sportViewHolder(val binding: ItemNewsListBinding):
@@ -28,8 +29,10 @@ class NewsSportAdapter(private val sportdata: List<Article>, private val context
                 .centerCrop()
                 .error(R.drawable.ic_launcher_background) // Error image if loading fails
                 .into(binding.ivCardNews)
+            binding.root.setOnClickListener {
+                newsItemClickListener.onNewsItemClickListener(data.url)
+            }
         }
-
 
     }
 

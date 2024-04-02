@@ -18,16 +18,28 @@
         android:theme="@style/Theme.Kabariza"
         tools:targetApi="31">
         <activity
+            android:name=".presentation.newssport_screen.view.NewsSportActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentation.newshealth_screen.view.HealthActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentation.newstech_screen.view.TechActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".presentation.home_screen.view.HomeActivity"
             android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
+
             </intent-filter>
+
         </activity>
     </application>
 

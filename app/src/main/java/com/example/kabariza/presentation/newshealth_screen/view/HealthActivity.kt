@@ -1,4 +1,4 @@
-package com.example.kabariza.presentation.newssport_screen.view
+package com.example.kabariza.presentation.newshealth_screen.view
 
 import android.annotation.SuppressLint
 import android.os.Build
@@ -8,26 +8,26 @@ import android.widget.ProgressBar
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.example.kabariza.R
-import com.example.kabariza.databinding.ActivitySportBinding
+import com.example.kabariza.databinding.ActivityHealthBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class NewsSportActivity  : AppCompatActivity() {
-    private lateinit var binding: ActivitySportBinding
-//    private lateinit var progressBar: ProgressBar
+class HealthActivity : AppCompatActivity() {
+    private lateinit var binding : ActivityHealthBinding
+    private lateinit var progressBar: ProgressBar
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding =ActivitySportBinding.inflate(layoutInflater)
+        binding = ActivityHealthBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         val url = intent.getStringExtra("url")
         webViewSetup(url)
 
-        binding.backsport.setOnClickListener{
-            if(binding.wvsport.canGoBack()){
-                binding.wvsport.goBack()
+        binding.backhealth.setOnClickListener{
+            if(binding.wvhealth.canGoBack()){
+                binding.wvhealth.goBack()
             }else{
                 finish()
             }
@@ -36,15 +36,14 @@ class NewsSportActivity  : AppCompatActivity() {
     @SuppressLint("SetJavaScriptEnabled")
     @RequiresApi(Build.VERSION_CODES.O)
     private fun webViewSetup(baseurl:String?){
-        binding.wvsport.webViewClient= WebViewClient()
-//        progressBar=findViewById(R.id.pbsport)
-        binding.wvsport.apply {
+        binding.wvhealth.webViewClient= WebViewClient()
+        progressBar=findViewById(R.id.pbhealth)
+        binding.wvhealth.apply {
             settings.javaScriptEnabled=true
             settings.safeBrowsingEnabled=true
         }
         baseurl?.let{
-            binding.wvsport.loadUrl(it)
+            binding.wvhealth.loadUrl(it)
         }
     }
-
 }

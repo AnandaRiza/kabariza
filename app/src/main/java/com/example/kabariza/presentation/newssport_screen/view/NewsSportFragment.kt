@@ -1,10 +1,8 @@
 package com.example.kabariza.presentation.newssport_screen.view
 
 import Article
-import android.os.Bundle
-import android.util.Log
+import android.content.Intent
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.example.kabariza.base.BaseFragment
@@ -13,11 +11,12 @@ import com.example.kabariza.databinding.FragmentSportBinding
 import com.example.kabariza.presentation.home_screen.adapter.HomeAdapter
 import com.example.kabariza.presentation.newssport_screen.adapter.NewsSportAdapter
 import com.example.kabariza.presentation.newssport_screen.view_model.NewsSportViewModel
+import com.example.kabariza.utils.NewsItemClickListener
 import com.google.android.material.tabs.TabLayoutMediator
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class NewsSportFragment : BaseFragment<FragmentSportBinding>() {
+class NewsSportFragment : BaseFragment<FragmentSportBinding>(), NewsItemClickListener {
     private lateinit var sportNewsAdapter: NewsSportAdapter
     private val viewmodel: NewsSportViewModel by viewModels()
 
@@ -47,8 +46,17 @@ class NewsSportFragment : BaseFragment<FragmentSportBinding>() {
     private fun setUpViewSport(data: List<Article>?) {
         sportNewsAdapter = NewsSportAdapter(
             sportdata = data ?: listOf(),
-            context = binding.root.context
+            context = binding.root.context,
+            newsItemClickListener = this
+
+
         )
         binding.componentSport.rvNewsList.adapter = sportNewsAdapter
+
     }
+
+    override fun onNewsItemClickListener(url: String) {
+        val intent = Intent(requireContext(), NewsSportActivity::class.java)
+        intent.putExtra("url",url)
+        startActivity(intent)    }
 }
