@@ -2,6 +2,7 @@ package com.example.kabariza.presentation.newssport_screen.view
 
 import Article
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -27,10 +28,10 @@ class NewsSportFragment : BaseFragment<FragmentSportBinding>() {
         return FragmentSportBinding.inflate(inflater, container, false)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        setupView()
-    }
+//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+//        super.onViewCreated(view, savedInstanceState)
+//        setupView()
+//    }
 
     override fun setupView() {
         viewmodel.getSportNews()
@@ -38,15 +39,15 @@ class NewsSportFragment : BaseFragment<FragmentSportBinding>() {
     }
 
     private fun observeViewModel() {
-        viewmodel.homeNewsSport.observe(viewLifecycleOwner) { sportNews ->
-            setUpViewSport(sportNews.articles)
+        viewmodel.homeNewsSport.observe(viewLifecycleOwner) {
+            setUpViewSport(it.articles)
         }
     }
 
     private fun setUpViewSport(data: List<Article>?) {
         sportNewsAdapter = NewsSportAdapter(
             sportdata = data ?: listOf(),
-            context = requireContext()
+            context = binding.root.context
         )
         binding.componentSport.rvNewsList.adapter = sportNewsAdapter
     }

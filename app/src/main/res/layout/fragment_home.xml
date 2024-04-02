@@ -24,5 +24,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tabHome"/>
 
+    <include
+        android:id="@+id/component_list"
+        layout="@layout/component_news_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/vpNews"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
