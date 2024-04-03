@@ -22,7 +22,7 @@ class NewsSportActivity  : AppCompatActivity() {
         binding =ActivitySportBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val url = intent.getStringExtra("url")
+        val url = intent.getStringExtra("url") //masukin ke component object bikin constant
         webViewSetup(url)
 
         binding.backsport.setOnClickListener{

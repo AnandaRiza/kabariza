@@ -34,7 +34,8 @@ class TechAdapter(private val techdata: List<Article>,
             Glide.with(context)
                 .load(data.urlToImage)
                 .centerCrop()
-                .error(R.drawable.ic_launcher_background) // Error image if loading fails
+                .error(R.drawable.image_not_found_icon) // Error image if loading fails
+                .placeholder(R.drawable.tube_spinner)
                 .into(binding.ivCardNews)
             binding.root.setOnClickListener{
                 newsItemClickListener.onNewsItemClickListener(data.url)
