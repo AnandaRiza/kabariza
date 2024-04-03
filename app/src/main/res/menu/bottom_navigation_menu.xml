@@ -2,13 +2,18 @@
     <item
         android:id="@+id/action_sport"
         android:title="Sport"
+        android:icon="@drawable/sport_svgrepo_com"
         />
     <item
         android:id="@+id/action_health"
         android:title="Health"
-       />
+        android:icon="@drawable/health_care_svgrepo_com"
+
+        />
     <item
         android:id="@+id/action_technology"
         android:title="Technology"
-       />
+        android:icon="@drawable/technology_icon"
+
+        />
 </menu>
