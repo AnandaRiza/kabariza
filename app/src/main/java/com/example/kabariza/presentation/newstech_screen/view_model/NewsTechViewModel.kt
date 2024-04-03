@@ -25,7 +25,7 @@ class NewsTechViewModel @Inject constructor(private val newsRemoteDataSource: Ne
 
 
     fun getTechNews() = viewModelScope.launch(Dispatchers.IO) {
-        newsRemoteDataSource.getDataNews().let {
+        newsRemoteDataSource.getDataNewsTechnology().let {
             if(it.isSuccessful){
                 _homeNewsTech.postValue(it.body())
             }

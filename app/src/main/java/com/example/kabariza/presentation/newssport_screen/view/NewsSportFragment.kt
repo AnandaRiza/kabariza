@@ -4,6 +4,7 @@ import Article
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import com.example.kabariza.base.BaseFragment
 import com.example.kabariza.databinding.FragmentHomeBinding
@@ -52,6 +53,8 @@ class NewsSportFragment : BaseFragment<FragmentSportBinding>(), NewsItemClickLis
 
         )
         binding.componentSport.rvNewsList.adapter = sportNewsAdapter
+
+
 
     }
 
