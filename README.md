@@ -1,4 +1,4 @@
-<h1 align="center">Movie Bank</h1>
+<h1 align="center">Kabariza</h1>
 
 ## Tech Stack & Open-source Libraries
 
